@@ -20,6 +20,9 @@ struct Opt {
 
     #[structopt(short = "d", parse(try_from_str = "parse_with_unit"))]
     data_region_size: u64,
+
+    #[structopt(short = "r")]
+    r: usize,
 }
 
 fn unit_to_num(src: &str, suffix: &str, scale: u64) -> Result<u64, std::num::ParseIntError> {
@@ -59,7 +62,7 @@ fn main() {
     match &*opt.bench_module {
         "storage" => match &*opt.bench_name {
             "bench1" => {
-                storage::bench1(opt.lusf_path, opt.journal_size, opt.data_region_size);
+                storage::bench1(opt.lusf_path, opt.journal_size, opt.data_region_size, opt.r);
             }
             _ => {
                 panic!("not implemented");
