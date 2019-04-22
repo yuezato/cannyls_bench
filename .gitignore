@@ -4,3 +4,6 @@
 
 # for emacs
 *~
+
+# for lusf tiles
+*.lusf

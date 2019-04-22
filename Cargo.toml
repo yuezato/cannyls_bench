@@ -5,3 +5,6 @@ authors = ["yuuya uezato <yuuya_uezato@dwango.co.jp>"]
 edition = "2018"
 
 [dependencies]
+cannyls = "0.9.2"
+trackable = "^0.2.21"
+structopt = "0.2"
